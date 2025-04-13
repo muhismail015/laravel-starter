@@ -1,0 +1,43 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Class App\\Models\\User uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types\: TFactory$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Models/User.php
+
+		-
+			message: '#^Call to static method Webmozart\\Assert\\Assert\:\:allIsInstanceOf\(\) with array\<App\\Navigation\\NavigationItem\> and ''App\\\\Navigation\\\\NavigationItem'' will always evaluate to true\.$#'
+			identifier: staticMethod.alreadyNarrowedType
+			count: 1
+			path: src/Navigation/NavigationGroup.php
+
+		-
+			message: '#^Call to function method_exists\(\) with App\\Models\\User and ''checkPermissionTo'' will always evaluate to false\.$#'
+			identifier: function.impossibleType
+			count: 1
+			path: src/Navigation/NavigationManager.php
+
+		-
+			message: '#^Method App\\Navigation\\NavigationManager\:\:getUserNavigationGroups\(\) should return array\<App\\Navigation\\NavigationGroup\> but returns array\<mixed\>\.$#'
+			identifier: return.type
+			count: 2
+			path: src/Navigation/NavigationManager.php
+
+		-
+			message: '#^Parameter \#1 \$key of method Illuminate\\Support\\Collection\<int,mixed\>\:\:unique\(\) expects \(callable\(mixed, int\)\: mixed\)\|string\|null, Closure\(App\\Navigation\\NavigationItem\)\: string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Navigation/NavigationManager.php
+
+		-
+			message: '#^Parameter \#1 \$menus of method App\\Navigation\\NavigationGroup\:\:menus\(\) expects array\<App\\Navigation\\NavigationItem\>, array\<int, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Navigation/NavigationManager.php
+
+		-
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
+			count: 1
+			path: tests/Unit/ExampleTest.php
