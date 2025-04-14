@@ -5,16 +5,23 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Database\Factories\UserFactory;
+use App\Models\User;
 
-final class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        UserFactory::new([
+        // Menggunakan User::factory() untuk membuat data user
+        User::factory()->create([
             'name' => 'Administrator',
             'email' => 'admin@fromhome.dev',
             'is_super_admin' => true,
-        ])->createOne();
+        ]);
+
+        User::factory()->create([
+            'name' => 'Muhammad Ismail',
+            'email' => 'ismail@gmail.com',
+            'is_super_admin' => true,
+        ]);
     }
 }
