@@ -24,9 +24,29 @@ final class NavigationServiceProvider extends ServiceProvider
         Navigation::registerNavigationGroups([
             NavigationGroup::new()->menus([
                 NavigationItem::new()
-                    ->label('Home')
+                    ->label('Dashboard')
                     ->href('/')
-                    ->icon('home'),
+                    ->icon('gauge'),
+            ]),
+            NavigationGroup::new()->label('Menus')->icon('square-menu')->menus([
+                NavigationItem::new()
+                    ->label('Employees')
+                    ->href('/employees')
+                    ->icon('users'),
+                NavigationItem::new()
+                    ->label('Volunteers')
+                    ->href('/volunteers')
+                    ->icon('heart-handshake'),
+            ]),
+            NavigationGroup::new()->label('Actions')->icon('square-pen')->menus([
+                NavigationItem::new()
+                    ->label('Donatur')
+                    ->href('/donatur')
+                    ->icon('square-menu'),
+                NavigationItem::new()
+                    ->label('Pencatatan Aktivitas')
+                    ->href('/pencatatan-aktivitas')
+                    ->icon('notebook-pen'),
             ]),
         ]);
     }
