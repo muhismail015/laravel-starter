@@ -14,7 +14,7 @@ final class ProfileInformationController extends Controller
     {
         $user = $request->user();
 
-        return Inertia::render('profile', [
+        return Inertia::render('Profile', [
             'user' => $user,
         ]);
     }

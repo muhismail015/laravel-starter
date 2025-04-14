@@ -32,7 +32,7 @@ export const NavBrandButton = (props: FlexProps) => {
             <BoxIcon color="white" />
           </Icon>
           <Box textAlign="start">
-            <Box fontWeight="semibold">Starter Inc</Box>
+            <Box fontWeight="semibold">MyLaravel</Box>
             <Box fontSize="xs" color="primary.500">
               FromHome
             </Box>
